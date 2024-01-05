@@ -1,5 +1,8 @@
-name: It-prompts Deployment
-on: push
+name: Helloworld Deployment
+on: 
+  push:
+    branches:
+      - master
 jobs:
   Build-Push:
     runs-on: ubuntu-latest
