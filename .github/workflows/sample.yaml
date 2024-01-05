@@ -1,0 +1,12 @@
+name: It-prompts Deployment
+on: push
+jobs:
+  Build-Push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions@checkout@v4
+      - name: Output information
+        run: |
+          echo "Github O/P detail"
+          echo "${{ toJSON(github) }}"
