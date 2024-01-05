@@ -12,4 +12,4 @@ jobs:
       - name: Output information
         run: |
           echo "Github O/P detail"
-          echo "${{ toJSON(github) }}"
+          echo "${{ toJSON(github.workflow) }}"
