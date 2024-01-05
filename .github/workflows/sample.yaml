@@ -1,15 +1,20 @@
 name: Helloworld Deployment
-on: 
+
+on:
   push:
     branches:
       - master
+
 jobs:
   Build-Push:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
       - name: Output information
         run: |
           echo "Github O/P detail"
-          echo "${{ toJSON(github.workflow) }}"
+          repository_full_name="${{ toJSON(github.repository) }}"
+          repository_name="${repository_full_name#*/}"  # Remove everything before and including the first /
+          echo "Repository Name: $repository_name"
