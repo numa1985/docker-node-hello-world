@@ -32,7 +32,7 @@ jobs:
           echo "Building Docker image..."
           echo "Repository Name: $repository_name"
           docker build -t "${{ env.repository_name }}:${{ github.run_number }}" .
-          docker push ${{ secrets.DOCKER_USERNAME }}/${{ env.repository_name }}:"${{ env.repository_name }}:${{ github.run_number }}"
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.repository_name }}:"${{ env.repository_name }}:${{ github.run_number }}"
 
 
 
